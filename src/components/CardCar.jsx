@@ -13,7 +13,7 @@ const CardCar = () => {
     const { user } = useAuth();
 
     const storedCars = JSON.parse(localStorage.getItem("cars"));
-    const carData = storedCars && defaultCars;
+    const carData = storedCars || defaultCars;
 
     const handleCardClick = (car) => {
         if (user) {
