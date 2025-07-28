@@ -47,12 +47,12 @@ const MyBookings = () => {
                     {bookings.map(booking => (
                         <div
                             key={booking.bookingId}
-                            className="border p-4 rounded-lg shadow-md bg-white"
+                            className=" p-4 rounded-xl shadow-md bg-white"
                         >
                             <img
                                 src={booking.car.image}
                                 alt={booking.car.name}
-                                className="w-full h-40 object-contain mb-4"
+                                className="w-full h-40 object-contain mb-4 rounded-xl shadow-lg"
                             />
                             <h2 className="text-xl font-semibold">{booking.car.name}</h2>
                             <p className="text-sm text-gray-600 mb-1">

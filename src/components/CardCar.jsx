@@ -12,9 +12,8 @@ const CardCar = () => {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-const storedCars = JSON.parse(localStorage.getItem("cars"));
-const carData = storedCars || defaultCars;
-
+    const storedCars = JSON.parse(localStorage.getItem("cars"));
+    const carData = storedCars && defaultCars;
 
     const handleCardClick = (car) => {
         if (user) {
@@ -27,7 +26,7 @@ const carData = storedCars || defaultCars;
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ms-6 mt-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mt-32 me-5">
             {carData.map((car, index) => (
                 <div
                     key={index}
@@ -35,7 +34,7 @@ const carData = storedCars || defaultCars;
                     className='mt-32 ms-6 h-[58vh] w-[vw] rounded-2xl shadow-lg cursor-pointer '
                 >
                     <div
-                        className='border rounded-t-2xl rounded-bottom-0 h-[33vh] bg-cover'
+                        className=' rounded-t-2xl rounded-bottom-0 h-[33vh] bg-cover shadow-lg'
                         style={{ backgroundImage: `url(${car.image})` }}
                     >
                         <div className='h-[10vh] pt-4 ps-3'>
